@@ -606,7 +606,7 @@ export default function Home() {
             <p className="text-emerald-100 text-sm md:text-base leading-relaxed">Faça parte da nossa comunidade VIP! Receba <strong className="text-yellow-300">ofertas relâmpago</strong>, cortes especiais em primeira mão e participe de enquetes sobre nossos novos kits.</p>
           </div>
           <div className="w-full md:w-auto relative z-10">
-            <a href="https://chat.whatsapp.com/COLOQUE_O_LINK_DO_SEU_GRUPO_AQUI" target="_blank" rel="noopener noreferrer" className="flex-1 items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-zinc-950 font-black py-4 px-8 rounded-xl shadow-md transition-transform active:scale-95 uppercase tracking-wide whitespace-nowrap">
+            <a href="https://chat.whatsapp.com/EtxjmUvN4AOHoAtcOl0NQ8" target="_blank" rel="noopener noreferrer" className="flex-1 items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-zinc-950 font-black py-4 px-8 rounded-xl shadow-md transition-transform active:scale-95 uppercase tracking-wide whitespace-nowrap">
               <span>Entrar no Grupo</span>
               <span className="text-xl">📲</span>
             </a>
