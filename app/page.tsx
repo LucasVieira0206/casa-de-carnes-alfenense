@@ -40,6 +40,11 @@ export default function Home() {
   const [instrucao, setInstrucao] = useState('');
   const [instrucaoAberta, setInstrucaoAberta] = useState(false);
 
+  // === NOVOS ESTADOS PARA ENTREGA E ENDEREÇO ===
+  const [tipoPedido, setTipoPedido] = useState<'retirada' | 'entrega'>('retirada');
+  const [endereco, setEndereco] = useState('');
+  // ============================================
+
   // === FUNÇÃO DO GOOGLE ANALYTICS (O ESPIÃO) ===
   const trackEvent = (action: string, category: string, label: string, value?: number) => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -413,11 +418,16 @@ export default function Home() {
   const finalizarPedido = () => {
     if(carrinho.length === 0) return;
 
+    if (tipoPedido === 'entrega' && endereco.trim() === '') {
+      alert("Por favor, preencha o seu endereço para que possamos realizar a entrega.");
+      return;
+    }
+
     // 🔥 EVENTO: AVISA O GOOGLE QUE O CLIENTE TENTOU FECHAR A COMPRA
     trackEvent('begin_checkout', 'Venda', 'Iniciou Finalização WhatsApp', valorTotal);
 
     const numeroWhatsApp = "5535999323530"; 
-    let mensagem = "*NOVO PEDIDO - CASA DE CARNES E FRANGOS ALFENENSE* 🥩\n\n";
+    let mensagem = "*NOVO PEDIDO - CASA DE CARNES E FRANGOS ALFENENSE*\n\n";
     
     carrinho.forEach(item => {
       const obsTexto = item.instrucao ? `\n    ↳ *Obs:* ${item.instrucao}` : '';
@@ -439,13 +449,24 @@ export default function Home() {
       }
     });
 
+    const taxaEntrega = tipoPedido === 'entrega' ? 8 : 0;
+    const valorFinal = valorTotal + taxaEntrega;
+
     if (temItemSobConsulta) {
       mensagem += `\n*Valor Parcial: R$ ${valorTotal.toFixed(2).replace('.', ',')}*\n_(Sem contar os itens com preço a consultar)_\n\n`;
     } else {
-      mensagem += `\n*Valor Total: R$ ${valorTotal.toFixed(2).replace('.', ',')}*\n\n`;
+      mensagem += `\n*Subtotal:* R$ ${valorTotal.toFixed(2).replace('.', ',')}\n`;
+      if (tipoPedido === 'entrega') {
+        mensagem += `*Taxa de Entrega:* R$ 8,00\n`;
+      }
+      mensagem += `*Valor Total:* R$ ${valorFinal.toFixed(2).replace('.', ',')}\n\n`;
     }
     
-    mensagem += "Por favor, me informe a chave PIX e a previsão de entrega/retirada!";
+    mensagem += `*Forma de Recebimento:* ${tipoPedido === 'entrega' ? 'Entrega' : 'Retirada na Loja'}\n`;
+    if (tipoPedido === 'entrega') {
+      mensagem += `*Endereço:* ${endereco}\n`;
+    }
+
     window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`, "_blank");
   };
 
@@ -925,7 +946,7 @@ export default function Home() {
       )}
 
       {/* ========================================================= */}
-      {/* 🛒 MODAL DO CARRINHO */}
+      {/* 🛒 MODAL DO CARRINHO COM OPÇÃO DE ENTREGA */}
       {/* ========================================================= */}
       {carrinhoAberto && (
         <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/60 backdrop-blur-sm">
@@ -1011,10 +1032,43 @@ export default function Home() {
 
             {totalItens > 0 && (
               <div className="p-6 bg-zinc-50 border-t border-zinc-200 rounded-b-3xl shrink-0">
+                
+                {/* NOVA ÁREA: ESCOLHER RETIRADA OU ENTREGA */}
+                <div className="mb-6 bg-white p-4 rounded-xl border border-zinc-200 shadow-sm">
+                  <h3 className="font-bold text-zinc-800 mb-3 text-sm">Como deseja receber seu pedido?</h3>
+                  <div className="flex gap-3 mb-4">
+                    <button 
+                      onClick={() => setTipoPedido('retirada')}
+                      className={`flex-1 py-2 px-3 rounded-lg border font-bold text-xs md:text-sm transition-colors ${tipoPedido === 'retirada' ? 'bg-red-50 border-red-500 text-red-700' : 'bg-white border-zinc-300 text-zinc-600 hover:bg-zinc-50'}`}
+                    >
+                      🏪 Retirar na Loja
+                    </button>
+                    <button 
+                      onClick={() => setTipoPedido('entrega')}
+                      className={`flex-1 py-2 px-3 rounded-lg border font-bold text-xs md:text-sm transition-colors ${tipoPedido === 'entrega' ? 'bg-red-50 border-red-500 text-red-700' : 'bg-white border-zinc-300 text-zinc-600 hover:bg-zinc-50'}`}
+                    >
+                      🛵 Entrega (+R$ 8,00)
+                    </button>
+                  </div>
+
+                  {tipoPedido === 'entrega' && (
+                    <div className="animate-in slide-in-from-top-2">
+                      <textarea 
+                        value={endereco}
+                        onChange={(e) => setEndereco(e.target.value)}
+                        placeholder="Digite sua Rua, Número, Bairro e Ponto de Referência..."
+                        className="w-full p-3 rounded-lg border border-zinc-300 bg-zinc-50 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none resize-none h-20 text-zinc-800"
+                      />
+                    </div>
+                  )}
+                </div>
+
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-zinc-500 font-bold uppercase tracking-wider text-sm">Total do Pedido</span>
                   <div className="flex flex-col items-end">
-                    <span className="text-3xl font-black text-zinc-900">R$ {valorTotal.toFixed(2).replace('.', ',')}</span>
+                    <span className="text-3xl font-black text-zinc-900">
+                      R$ {(valorTotal + (tipoPedido === 'entrega' ? 8 : 0)).toFixed(2).replace('.', ',')}
+                    </span>
                     {temItemSobConsulta && (
                       <span className="text-xs text-amber-600 font-bold mt-1">+ itens a consultar</span>
                     )}
