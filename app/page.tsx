@@ -229,17 +229,17 @@ export default function Home() {
     return () => clearInterval(intervalo);
   }, []);
 
-  // --- BASE DE DADOS DE PRODUTOS COM PREÇOS PARA 1KG ---
+ // --- BASE DE DADOS DE PRODUTOS ---
   const produtos: Produto[] = [
     // BOVINOS 
     { id: "1", nome: "Picanha Premium", preco: 0, imagem: "/picanha.png", descricao: "Corte nobre com capa de gordura uniforme. O peso e o valor final da peça serão confirmados no WhatsApp.", unidade: "kg", category: "Bovinos", sobConsulta: true },
     { id: "2", nome: "Contra Filé", preco: 59.90, imagem: "/contrafile.png", descricao: "Corte clássico, macio e versátil, ideal para bifes e grelha.", unidade: "kg", category: "Bovinos" },
     { id: "10", nome: "Alcatra", preco: 59.90, imagem: "/alcatra.png", descricao: "Carne magra de primeira, excelente para assados e bifes.", unidade: "kg", category: "Bovinos" },
-    { id: "37", nome: "Maminha", preco: 55.90, imagem: "/maminha.png", descricao: "Corte super suculento e macio, perfeito para assar no forno ou na brasa.", unidade: "kg", category: "Bovinos" },
+    { id: "37", nome: "Maminha", preco: 59.90, imagem: "/maminha.png", descricao: "Corte super suculento e macio, perfeito para assar no forno ou na brasa.", unidade: "kg", category: "Bovinos" },
     { id: "38", nome: "Coxão Mole", preco: 49.90, imagem: "/coxao-mole.png", descricao: "Carne macia do dia a dia, ideal para bifes, assados e carne moída.", unidade: "kg", category: "Bovinos" },
     { id: "39", nome: "Miolo da Paleta", preco: 49.90, imagem: "/miolo-paleta.png", descricao: "Corte saboroso e muito macio, ótimo para cozidos e bifes do dia a dia.", unidade: "kg", category: "Bovinos" },
     { id: "40", nome: "Lagarto", preco: 45.90, imagem: "/lagarto.png", descricao: "Corte magro e bem delineado, a melhor opção para rosbife e carne louca.", unidade: "kg", category: "Bovinos" },
-    { id: "41", nome: "Bife a Rolê", preco: 45.90, imagem: "/bife-role.png", descricao: "Bifes finos já preparados no ponto certo para você rechear e enrolar.", unidade: "kg", category: "Bovinos" },
+    { id: "41", nome: "Bife a Rolê", preco: 47.90, imagem: "/bife-role.png", descricao: "Bifes finos já preparados no ponto certo para você rechear e enrolar.", unidade: "kg", category: "Bovinos" },
     { id: "42", nome: "Coxão Duro", preco: 47.90, imagem: "/coxao-duro.png", descricao: "Corte de fibras mais longas, perfeito para carnes de panela e cozidos lentos.", unidade: "kg", category: "Bovinos" },
     { id: "43", nome: "Braço da Paleta", preco: 42.90, imagem: "/braco-paleta.png", descricao: "Corte saboroso e nutritivo, excelente para ensopados e caldos.", unidade: "kg", category: "Bovinos" },
     { id: "44", nome: "Acém", preco: 42.90, imagem: "/acem.png", descricao: "Carne super versátil, a campeã para o preparo de carne de panela e moída.", unidade: "kg", category: "Bovinos" },
@@ -263,7 +263,7 @@ export default function Home() {
     { id: "17", nome: "Linguiça Apimentada", preco: 28.90, imagem: "/linguica-apimentada.png", descricao: "Nossa toscana com um toque picante especial que não pode faltar.", unidade: "kg", category: "Linguiças" },
     { id: "86", nome: "Linguiça de Frango (Comum)", preco: 30.00, imagem: "/linguica-frango-comum.png", descricao: "Mais leve, suave e saborosa. Feita com cortes de frango selecionados.", unidade: "kg", category: "Linguiças" },
     { id: "87", nome: "Linguiça de Frango Recheada", preco: 45.00, imagem: "/linguica-frango-recheada.png", descricao: "Linguiça de frango artesanal com aquele recheio irresistível e cremoso.", unidade: "kg", category: "Linguiças" },
-    { id: "94", nome: "Linguiça Suína (Comum)", preco: 35.00, imagem: "/linguica-suina-comum.png", descricao: "A autêntica linguiça de porco mineira, com aquele temperinho caseiro.", unidade: "kg", category: "Linguiças" },
+    { id: "94", nome: "Linguiça Suína (Comum)", preco: 28.90, imagem: "/linguica-suina-comum.png", descricao: "A autêntica linguiça de porco mineira, com aquele temperinho caseiro.", unidade: "kg", category: "Linguiças" },
     { id: "95", nome: "Linguiça Suína Recheada", preco: 45.00, imagem: "/linguica-suina-recheada.png", descricao: "Linguiça suína elevada ao próximo nível com nosso recheio especial.", unidade: "kg", category: "Linguiças" },
 
     // FRANGOS 
@@ -271,7 +271,7 @@ export default function Home() {
     { id: "21", nome: "Filé de Peito", preco: 29.90, imagem: "/file-peito.png", descricao: "Limpo, sem osso e sem pele. A escolha prática e saudável para o dia a dia.", unidade: "kg", category: "Frangos" },
     { id: "80", nome: "Asa de Frango", preco: 19.90, imagem: "/asa-frango.jpeg", descricao: "Corte tradicional que todos adoram, perfeito para petiscos e assados.", unidade: "kg", category: "Frangos" },
     { id: "81", nome: "Coraçãozinho de Frango", preco: 49.00, imagem: "/coracaozinho-frango.jpeg", descricao: "Limpos e frescos. A estrela dos aperitivos antes do prato principal.", unidade: "kg", category: "Frangos" },
-    { id: "82", nome: "Coxa com Sobrecoxa", preco: 14.90, imagem: "/coxa-sobrecoxa.jpeg", descricao: "As partes mais suculentas do frango, garantem um assado macio e saboroso.", unidade: "kg", category: "Frangos" },
+    { id: "82", nome: "Coxa com Sobrecoxa", preco: 17.90, imagem: "/coxa-sobrecoxa.jpeg", descricao: "As partes mais suculentas do frango, garantem um assado macio e saboroso.", unidade: "kg", category: "Frangos" },
     { id: "97", nome: "Sobrecoxa", preco: 19.90, imagem: "/sobrecoxa.jpeg", descricao: "Corte suculento e versátil, excelente para assados ou ensopados.", unidade: "kg", category: "Frangos" },
     { id: "83", nome: "Coxinha da Asa", preco: 24.90, imagem: "/coxinha-asa.jpeg", descricao: "Os famosos 'drumets', pequenininhos, fáceis de fazer e super carnudos.", unidade: "kg", category: "Frangos" },
     { id: "84", nome: "Fígado de Frango", preco: 13.00, imagem: "/figado-frango.jpeg", descricao: "Fresco e fonte de ferro, excelente para refogados com cebola e patês.", unidade: "kg", category: "Frangos" },
@@ -283,42 +283,47 @@ export default function Home() {
     { id: "91", nome: "Rocambole", preco: 45.90, imagem: "/rocambole.jpeg", descricao: "Rocambole de frango generosamente recheado. É só levar ao forno e servir.", unidade: "un", category: "Frangos" },
 
     // ESPETINHOS (Vendidos por Unidade)
-    { id: "50", nome: "Espetinho de Alcatra", preco: 11.00, imagem: "/espeto-alcatra.jpeg", descricao: "Cubos padronizados de alcatra macia, prontinhos para sua grelha.", unidade: "un", category: "Espetinhos" },
-    { id: "51", nome: "Espetinho de Contra Filé", preco: 11.00, imagem: "/espeto-contrafile.jpeg", descricao: "A excelência e suculência do contra filé já cortado e no espeto.", unidade: "un", category: "Espetinhos" },
-    { id: "52", nome: "Espetinho de Medalhão de Frango", preco: 10.00, imagem: "/espeto-medalhao-frango.png", descricao: "O queridinho medalhão de frango com bacon na comodidade do palito.", unidade: "un", category: "Espetinhos" },
-    { id: "53", nome: "Espetinho de Linguiça", preco: 8.00, imagem: "/espeto-linguica.jpeg", descricao: "Nossa saborosa linguiça porcionada no palito, asse rápido e sem trabalho.", unidade: "un", category: "Espetinhos" },
-    { id: "54", nome: "Espetinho de Queijo Coalho - 7 Unid.", preco: 30.00, imagem: "/espeto-queijo-coalho.jpeg", descricao: "Pacote com 7 espetos generosos de queijo coalho para dourar na brasa.", unidade: "un", category: "Espetinhos" },
-    { id: "55", nome: "Espeto de Fraldinha", preco: 6.00, imagem: "/espeto-fraldinha.jpeg", descricao: "Espeto que derrete na boca com o sabor característico da nossa fraldinha.", unidade: "un", category: "Espetinhos" },
-    { id: "56", nome: "Espeto Coxão Mole", preco: 7.00, imagem: "/espeto-coxao-mole.png", descricao: "Carne bovina bastante macia, opção de espetinho mais magro e saboroso.", unidade: "un", category: "Espetinhos" },
-    { id: "57", nome: "Espeto Panceta", preco: 6.00, imagem: "/espeto-panceta.png", descricao: "Cubos de panceta suína que pururucam lindamente na sua churrasqueira.", unidade: "un", category: "Espetinhos" },
-    { id: "58", nome: "Espeto de Tulipa", preco: 7.00, imagem: "/espeto-tulipa.png", descricao: "Asinhas de frango invertidas e bem temperadas, espetadas para fácil manuseio.", unidade: "un", category: "Espetinhos" },
+    { id: "50", nome: "Espetinho de Alcatra", preco: 7.00, imagem: "/espeto-alcatra.jpeg", descricao: "Cubos padronizados de alcatra macia, prontinhos para sua grelha.", unidade: "un", category: "Espetinhos" },
+    { id: "51", nome: "Espetinho de Contra Filé", preco: 7.00, imagem: "/espeto-contrafile.jpeg", descricao: "A excelência e suculência do contra filé já cortado e no espeto.", unidade: "un", category: "Espetinhos" },
+    { id: "101", nome: "Espetinho de Picanha", preco: 9.50, imagem: "/espeto-picanha.png", descricao: "O corte mais nobre do churrasco, agora em um espetinho irresistível.", unidade: "un", category: "Espetinhos" },
+    { id: "52", nome: "Espetinho de Medalhão de Frango", preco: 6.00, imagem: "/espeto-medalhao-frango.png", descricao: "O queridinho medalhão de frango com bacon na comodidade do palito.", unidade: "un", category: "Espetinhos" },
+    { id: "53", nome: "Espetinho de Linguiça Tradicional", preco: 4.00, imagem: "/espeto-linguica.jpeg", descricao: "Nossa saborosa linguiça porcionada no palito, asse rápido e sem trabalho.", unidade: "un", category: "Espetinhos" },
+    { id: "103", nome: "Espetinho de Linguiça Recheada", preco: 5.00, imagem: "/espeto-linguica-recheada.png", descricao: "A deliciosa linguiça recheada, pronta para a grelha.", unidade: "un", category: "Espetinhos" },
+    { id: "54", nome: "Espetinho de Queijo Coalho - 6 Unid.", preco: 25.00, imagem: "/espeto-queijo-coalho.jpeg", descricao: "Pacote com 6 espetos generosos de queijo coalho para dourar na brasa.", unidade: "un", category: "Espetinhos" },
+    { id: "55", nome: "Espeto de Fraldinha", preco: 5.00, imagem: "/espeto-fraldinha.jpeg", descricao: "Espeto que derrete na boca com o sabor característico da nossa fraldinha.", unidade: "un", category: "Espetinhos" },
+    { id: "56", nome: "Espeto Coxão Mole", preco: 6.00, imagem: "/espeto-coxao-mole.png", descricao: "Carne bovina bastante macia, opção de espetinho mais magro e saboroso.", unidade: "un", category: "Espetinhos" },
+    { id: "57", nome: "Espeto Panceta", preco: 5.00, imagem: "/espeto-panceta.png", descricao: "Cubos de panceta suína que pururucam lindamente na sua churrasqueira.", unidade: "un", category: "Espetinhos" },
+    { id: "102", nome: "Espetinho de Costela", preco: 6.00, imagem: "/espeto-costela.png", descricao: "Costela macia e saborosa no espeto.", unidade: "un", category: "Espetinhos" },
+    { id: "58", nome: "Espeto de Tulipa", preco: 6.00, imagem: "/espeto-tulipa.png", descricao: "Asinhas de frango invertidas e bem temperadas, espetadas para fácil manuseio.", unidade: "un", category: "Espetinhos" },
+    { id: "105", nome: "Espetinho de Tulipa Mostarda e Mel", preco: 8.00, imagem: "/espeto-tulipa-mostarda.png", descricao: "Tulipas com o toque agridoce perfeito da mostarda e mel.", unidade: "un", category: "Espetinhos" },
+    { id: "104", nome: "Espetinho de Coração de Frango", preco: 6.00, imagem: "/espeto-coracao.png", descricao: "Coraçõezinhos bem temperados e assados no ponto certo.", unidade: "un", category: "Espetinhos" },
     { id: "59", nome: "Espeto de Pernil", preco: 4.75, imagem: "/espeto-pernil.png", descricao: "Cubinhos caprichados de carne de porco macia com nosso tempero mineiro.", unidade: "un", category: "Espetinhos" },
 
     // FRIOS E ACOMPANHAMENTOS (Vendidos por Unidade/Kg)
     { id: "5", nome: "Pão de Alho (Pacote)", preco: 18.00, imagem: "/pao-de-alho.png", descricao: "Pacotinho prático com 400g. O melhor pão de alho para acompanhar as carnes.", unidade: "un", category: "Frios e Acompanhamentos" },
-    { id: "24", nome: "Queijo Coalho", preco: 24.90, imagem: "/queijo-coalho-tradicional.png", descricao: "Pacote com 7 espetos maravilhosos, perfeito para dourar na churrasqueira.", unidade: "un", category: "Frios e Acompanhamentos" },
-    { id: "6", nome: "Carvão 3kg", preco: 12.00, imagem: "/carvao.png", descricao: "Carvão vegetal selecionado com queima duradoura e que faz pouca fumaça.", unidade: "un", category: "Frios e Acompanhamentos" },
+    { id: "24", nome: "Queijo Coalho", preco: 25.00, imagem: "/queijo-coalho-tradicional.png", descricao: "Pacote com 6 espetos maravilhosos, perfeito para dourar na churrasqueira.", unidade: "un", category: "Frios e Acompanhamentos" },
+    { id: "6", nome: "Carvão 3kg", preco: 19.00, imagem: "/carvao.png", descricao: "Carvão vegetal selecionado com queima duradoura e que faz pouca fumaça.", unidade: "un", category: "Frios e Acompanhamentos" },
     { id: "60", nome: "Coxinha para Fritar (500g)", preco: 32.90, imagem: "/coxinha-fritar.png", descricao: "Massa super sequinha e recheio farto de frango desfiado. Pacote com 500g, é só chegar e fritar.", unidade: "un", category: "Frios e Acompanhamentos" },
-    { id: "61", nome: "Mussarela", preco: 60.00, imagem: "/mussarela.png", descricao: "Mussarela fatiada ou em pedaço de alta qualidade. Derrete perfeitamente.", unidade: "kg", category: "Frios e Acompanhamentos" },
+    { id: "61", nome: "Mussarela", preco: 59.90, imagem: "/mussarela.png", descricao: "Mussarela fatiada ou em pedaço de alta qualidade. Derrete perfeitamente.", unidade: "kg", category: "Frios e Acompanhamentos" },
     { id: "62", nome: "Queijo Meia Cura", preco: 59.90, imagem: "/queijo-meia-cura.png", descricao: "Tradicional queijo minas curado, com sabor mais firme. Combina com um bom café.", unidade: "kg", category: "Frios e Acompanhamentos" },
     { id: "63", nome: "Queijo Palito", preco: 19.00, imagem: "/queijo-palito.png", descricao: "Queijo tipo minas em formato divertido de palito, é o lanche ideal das crianças.", unidade: "un", category: "Frios e Acompanhamentos" },
     { id: "64", nome: "Queijo Nozinho", preco: 19.00, imagem: "/queijo-nozinho.png", descricao: "As famosas bolinhas trançadas em nó de queijo minas, super frescas e macias.", unidade: "un", category: "Frios e Acompanhamentos" },
-    { id: "65", nome: "Queijo Fresco", preco: 21.00, imagem: "/queijo-fresco.png", descricao: "O clássico frescal, suave e molhadinho, essencial no café da manhã brasileiro.", unidade: "un", category: "Frios e Acompanhamentos" },
+    { id: "65", nome: "Queijo Fresco (Frescal)", preco: 48.90, imagem: "/queijo-fresco.png", descricao: "O clássico frescal, suave e molhadinho, essencial no café da manhã brasileiro.", unidade: "kg", category: "Frios e Acompanhamentos" },
 
     // ITENS DO IFOOD (DIA A DIA E KITS)
     { id: "26", nome: "Bandeja de Almôndega", preco: 20.00, imagem: "/almondega.png", descricao: "Almôndegas artesanais super suculentas, já moldadas para ir direto ao molho.", unidade: "un", category: "Dia a Dia" },
     { id: "27", nome: "Bandeja de Filé de Peixe 500g", preco: 25.00, imagem: "/file-peixe.png", descricao: "Filés de peixe selecionados, levinhos e prontos para fritar ou assar com batatas.", unidade: "un", category: "Dia a Dia" },
     
     // KITS E SAUDÁVEL
-    { id: "28", nome: "Kit Essencial #1", preco: 119.00, imagem: "/kit-essencial-1.jpg", descricao: "500g Coxinha da Asa / 500g Carne Moída / 500g Tekitos / 500g Pernil em Cubos / 500g Acém em Cubos / 500g Frango a Passarinho", unidade: "un", category: "Kits" },
-    { id: "29", nome: "Kit Praticidade #2", preco: 156.00, imagem: "/kit-praticidade-2.jpg", descricao: "500g Coxinha da Asa / 500g Linguiça / 500g Carne Moída / 500g Tulipa / 500g Bife de Porco / 500g Filé de Frango / 500g Carne para Cozinhar / 500g Frango a Passarinho", unidade: "un", category: "Kits" },
-    { id: "30", nome: "Kit Semanal #3", preco: 175.00, imagem: "/kit-semanal-3.jpg", descricao: "500g Carne Moída / 500g Linguiça / 500g Filé de Frango / 500g Bife de Boi / 1 Bdj Almôndegas / 500g Frango a Passarinho / 500g Acém em Cubos / 500g Pernil em Cubos", unidade: "un", category: "Kits" },
-    { id: "31", nome: "Kit Fitness #1", preco: 129.00, imagem: "/kit-fitness-1.jpg", descricao: "1 Bdj Almôndegas / 500g Bife de Patinho / 500g Filé de Frango / 500g Patinho Moído / 1 Bdj Filé de Peixe", unidade: "un", category: "Kits" },
-    { id: "32", nome: "Kit Fitness #2", preco: 129.00, imagem: "/kit-fitness-2.jpg", descricao: "1 Bdj Almôndegas / 500g Bife de Patinho / 500g Filé de Frango / 500g Patinho Moído / 1 Bdj Hambúrguer", unidade: "un", category: "Kits" },
-    { id: "33", nome: "Kit Hambúrguer", preco: 95.00, imagem: "/kit-hamburguer.jpg", descricao: "6 Unidades Pães Brioche / 12 Fat Queijo Cheddar / 12 Fatias Bacon / 6 Unidades Hambúrguer Artesanal 120g", unidade: "un", category: "Kits" },
-    { id: "34", nome: "Kit Churrasco - 10 Pessoas", preco: 179.00, imagem: "/kit-churrasco-10.jpg", descricao: "800g Contra Filé / 800g Coxão Mole / 500g Tulipa / 500g Panceta / 800g Linguiça / 500g Pernil", unidade: "un", category: "Kits" },
-    { id: "35", nome: "Kit Churrasco 10 Pessoas + Carvão", preco: 184.00, imagem: "/kit-churrasco-10-carvao.jpg", descricao: "600g Contra Filé / 600g Coxão Mole / 500g Tulipa / 1 Bdj Pão de Alho / 600g Linguiça / 600g Pernil + 1 Pct Carvão", unidade: "un", category: "Kits" },
-    { id: "36", nome: "Kit Churrasco - 12 Pessoas", preco: 260.00, imagem: "/kit-churrasco-12.jpg", descricao: "800g Panceta / 800g Contra Filé Paraguaio / 800g Alcatra / 800g Linguiça Recheada / 1 Pct Tulipa C/ Mostarda e Mel", unidade: "un", category: "Kits" },
+    { id: "28", nome: "Kit Essencial #1", preco: 99.00, imagem: "/kit-essencial-1.jpg", descricao: "500g Coxinha da Asa / 500g Carne Moída / 500g Tekitos / 500g Pernil em Cubos / 500g Acém em Cubos / 500g Frango a Passarinho", unidade: "un", category: "Kits" },
+    { id: "29", nome: "Kit Praticidade #2", preco: 130.00, imagem: "/kit-praticidade-2.jpg", descricao: "500g Coxinha da Asa / 500g Linguiça / 500g Carne Moída / 500g Tulipa / 500g Bife de Porco / 500g Filé de Frango / 500g Carne para Cozinhar / 500g Frango a Passarinho", unidade: "un", category: "Kits" },
+    { id: "30", nome: "Kit Semanal #3", preco: 145.00, imagem: "/kit-semanal-3.jpg", descricao: "500g Carne Moída / 500g Linguiça / 500g Filé de Frango / 500g Bife de Boi / 1 Bdj Almôndegas / 500g Frango a Passarinho / 500g Acém em Cubos / 500g Pernil em Cubos", unidade: "un", category: "Kits" },
+    { id: "31", nome: "Kit Fitness #1", preco: 109.90, imagem: "/kit-fitness-1.jpg", descricao: "1 Bdj Almôndegas / 500g Bife de Patinho / 500g Filé de Frango / 500g Patinho Moído / 1 Bdj Filé de Peixe", unidade: "un", category: "Kits" },
+    { id: "32", nome: "Kit Fitness #2", preco: 109.90, imagem: "/kit-fitness-2.jpg", descricao: "1 Bdj Almôndegas / 500g Bife de Patinho / 500g Filé de Frango / 500g Patinho Moído / 1 Bdj Hambúrguer", unidade: "un", category: "Kits" },
+    { id: "33", nome: "Kit Hambúrguer", preco: 79.00, imagem: "/kit-hamburguer.jpg", descricao: "6 Unidades Pães Brioche / 12 Fat Queijo Cheddar / 12 Fatias Bacon / 6 Unidades Hambúrguer Artesanal 120g", unidade: "un", category: "Kits" },
+    { id: "34", nome: "Kit Churrasco - 10 Pessoas", preco: 149.00, imagem: "/kit-churrasco-10.jpg", descricao: "800g Contra Filé / 800g Coxão Mole / 500g Tulipa / 500g Panceta / 800g Linguiça / 500g Pernil", unidade: "un", category: "Kits" },
+    { id: "35", nome: "Kit Churrasco 10 Pessoas + Carvão", preco: 154.90, imagem: "/kit-churrasco-10-carvao.jpg", descricao: "600g Contra Filé / 600g Coxão Mole / 500g Tulipa / 1 Bdj Pão de Alho / 600g Linguiça / 600g Pernil + 1 Pct Carvão", unidade: "un", category: "Kits" },
+    { id: "36", nome: "Kit Churrasco - 12 Pessoas", preco: 219.90, imagem: "/kit-churrasco-12.jpg", descricao: "800g Panceta / 800g Contra Filé Paraguaio / 800g Alcatra / 800g Linguiça Recheada / 1 Pct Tulipa C/ Mostarda e Mel", unidade: "un", category: "Kits" },
   ];
 
   const categoriasMenu = ['Todos', 'Kits', 'Dia a Dia', 'Bovinos', 'Suínos', 'Frangos', 'Linguiças', 'Espetinhos', 'Frios e Acompanhamentos'];
