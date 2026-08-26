@@ -677,6 +677,23 @@ export default function Home() {
             <div className="flex justify-between text-sm"><span className="text-zinc-400">Segunda a Sábado</span><span className="font-bold text-amber-400">07h00 às 19h30</span></div>
             <div className="flex justify-between text-sm"><span className="text-zinc-400">Domingo</span><span className="font-bold text-amber-400">07h00 às 12h30</span></div>
           </div>
+
+          {/* === ASSINATURA DO DESENVOLVEDOR === */}
+          <div className="mt-12 pt-6 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+            <p>© 2026 Casa de Carnes Alfenense.</p>
+            <p className="flex items-center gap-1">
+              Desenvolvido por 
+              <a 
+                href="https://www.linkedin.com/in/lucas-eduardo-vieira-ferreira-415a26364/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white font-bold hover:text-amber-400 transition-colors"
+              >
+                Lucas Vieira Ferreira
+              </a>
+            </p>
+          </div>
+          {/* =================================== */}
         </div>
       </footer>
 
