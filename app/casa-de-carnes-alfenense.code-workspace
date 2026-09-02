@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "Teste_Loopback",
+			"path": "../../../../PlatformIO/Projects/Teste_Loopback"
+		}
+	],
+	"settings": {}
+}

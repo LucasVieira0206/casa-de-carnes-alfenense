@@ -680,7 +680,7 @@ export default function Home() {
 
           {/* === ASSINATURA DO DESENVOLVEDOR === */}
           <div className="mt-12 pt-6 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-            <p>© 2026 Casa de Carnes Alfenense.</p>
+            <p>© 2026 Casa de Carnes e Frangos Alfenense.</p>
             <p className="flex items-center gap-1">
               Desenvolvido por 
               <a 
