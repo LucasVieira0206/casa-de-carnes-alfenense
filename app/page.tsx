@@ -232,23 +232,26 @@ export default function Home() {
  // --- BASE DE DADOS DE PRODUTOS ---
   const produtos: Produto[] = [
     // BOVINOS 
-    { id: "1", nome: "Picanha Premium", preco: 0, imagem: "/picanha.png", descricao: "Corte nobre com capa de gordura uniforme. O peso e o valor final da peça serão confirmados no WhatsApp.", unidade: "kg", category: "Bovinos", sobConsulta: true },
-    { id: "2", nome: "Contra Filé", preco: 59.90, imagem: "/contrafile.png", descricao: "Corte clássico, macio e versátil, ideal para bifes e grelha.", unidade: "kg", category: "Bovinos" },
-    { id: "10", nome: "Alcatra", preco: 59.90, imagem: "/alcatra.png", descricao: "Carne magra de primeira, excelente para assados e bifes.", unidade: "kg", category: "Bovinos" },
+    { id: "1", nome: "Picanha Premium", preco: 94.90, imagem: "/picanha.png", descricao: "Corte nobre com capa de gordura uniforme. O peso e o valor final da peça serão confirmados no WhatsApp.", unidade: "kg", category: "Bovinos", sobConsulta: true },
+    { id: "2", nome: "Contra Filé", preco: 64.90, imagem: "/contrafile.png", descricao: "Corte clássico, macio e versátil, ideal para bifes e grelha.", unidade: "kg", category: "Bovinos" },
+    { id: "10", nome: "Alcatra", preco: 64.90, imagem: "/alcatra.png", descricao: "Carne magra de primeira, excelente para assados e bifes.", unidade: "kg", category: "Bovinos" },
     { id: "37", nome: "Maminha", preco: 59.90, imagem: "/maminha.png", descricao: "Corte super suculento e macio, perfeito para assar no forno ou na brasa.", unidade: "kg", category: "Bovinos" },
-    { id: "38", nome: "Coxão Mole", preco: 49.90, imagem: "/coxao-mole.png", descricao: "Carne macia do dia a dia, ideal para bifes, assados e carne moída.", unidade: "kg", category: "Bovinos" },
-    { id: "39", nome: "Miolo da Paleta", preco: 49.90, imagem: "/miolo-paleta.png", descricao: "Corte saboroso e muito macio, ótimo para cozidos e bifes do dia a dia.", unidade: "kg", category: "Bovinos" },
+    { id: "38", nome: "Coxão Mole", preco: 54.90, imagem: "/coxao-mole.png", descricao: "Carne macia do dia a dia, ideal para bifes, assados e carne moída.", unidade: "kg", category: "Bovinos" },
+    { id: "39", nome: "Miolo da Paleta", preco: 54.90, imagem: "/miolo-paleta.png", descricao: "Corte saboroso e muito macio, ótimo para cozidos e bifes do dia a dia.", unidade: "kg", category: "Bovinos" },
     { id: "40", nome: "Lagarto", preco: 45.90, imagem: "/lagarto.png", descricao: "Corte magro e bem delineado, a melhor opção para rosbife e carne louca.", unidade: "kg", category: "Bovinos" },
     { id: "41", nome: "Bife a Rolê", preco: 47.90, imagem: "/bife-role.png", descricao: "Bifes finos já preparados no ponto certo para você rechear e enrolar.", unidade: "kg", category: "Bovinos" },
     { id: "42", nome: "Coxão Duro", preco: 47.90, imagem: "/coxao-duro.png", descricao: "Corte de fibras mais longas, perfeito para carnes de panela e cozidos lentos.", unidade: "kg", category: "Bovinos" },
-    { id: "43", nome: "Braço da Paleta", preco: 42.90, imagem: "/braco-paleta.png", descricao: "Corte saboroso e nutritivo, excelente para ensopados e caldos.", unidade: "kg", category: "Bovinos" },
-    { id: "44", nome: "Acém", preco: 42.90, imagem: "/acem.png", descricao: "Carne super versátil, a campeã para o preparo de carne de panela e moída.", unidade: "kg", category: "Bovinos" },
-    { id: "45", nome: "Músculo", preco: 39.90, imagem: "/musculo.png", descricao: "Rico em colágeno, indispensável para caldos, sopas e cozidos de inverno.", unidade: "kg", category: "Bovinos" },
+    { id: "43", nome: "Braço da Paleta", preco: 44.90, imagem: "/braco-paleta.png", descricao: "Corte saboroso e nutritivo, excelente para ensopados e caldos.", unidade: "kg", category: "Bovinos" },
+    { id: "44", nome: "Acém", preco: 45.90, imagem: "/acem.png", descricao: "Carne super versátil, a campeã para o preparo de carne de panela e moída.", unidade: "kg", category: "Bovinos" },
+    { id: "45", nome: "Músculo", preco: 44.90, imagem: "/musculo.png", descricao: "Rico em colágeno, indispensável para caldos, sopas e cozidos de inverno.", unidade: "kg", category: "Bovinos" },
     { id: "46", nome: "Kibe", preco: 36.90, imagem: "/kibe.png", descricao: "Massa pronta e bem temperada para kibe, feita com carne de primeira qualidade.", unidade: "kg", category: "Bovinos" },
     { id: "47", nome: "Costela de Boi", preco: 24.90, imagem: "/costela-boi.png", descricao: "Clássico raiz, sabor intenso e textura que desmancha após assada.", unidade: "kg", category: "Bovinos" },
-    { id: "11", nome: "Fraldinha", preco: 42.90, imagem: "/fraldinha.png", descricao: "Corte muito suculento e de fibras soltas, excelente na grelha.", unidade: "kg", category: "Bovinos" },
-    { id: "13", nome: "Patinho", preco: 49.90, imagem: "/patinho.png", descricao: "Carne magra de primeira com pouca gordura. Ideal para bifes, picadinhos ou moída na hora.", unidade: "kg", category: "Bovinos" },
+    { id: "11", nome: "Fraldinha", preco: 48.90, imagem: "/fraldinha.png", descricao: "Corte muito suculento e de fibras soltas, excelente na grelha.", unidade: "kg", category: "Bovinos" },
+    { id: "13", nome: "Patinho", preco: 54.90, imagem: "/patinho.png", descricao: "Carne magra de primeira com pouca gordura. Ideal para bifes, picadinhos ou moída na hora.", unidade: "kg", category: "Bovinos" },
+    { id: "106", nome: "Peixinho", preco: 48.90, imagem: "/peixinho.png", descricao: "Corte magro, macio e saboroso, com pouca gordura. Perfeito para bifes, picadinhos, assados ou carne moída.", unidade: "kg", category: "Bovinos" },
+    { id: "107", nome: "Filé Mignon", preco: 94.90, imagem: "/mignon.png", descricao: "Corte nobre, extremamente macio e com pouca gordura. Ideal para medalhões, bifes, escalopes e receitas especiais.", unidade: "kg", category: "Bovinos" },
 
+     
     // SUÍNOS
     { id: "92", nome: "Bacon", preco: 32.90, imagem: "/bacon.png", descricao: "Bacon defumado em peça, com equilíbrio perfeito de carne e gordura.", unidade: "kg", category: "Suínos" },
     { id: "93", nome: "Calabresa", preco: 32.90, imagem: "/calabresa.png", descricao: "Linguiça calabresa defumada de alta qualidade, ideal para porções.", unidade: "kg", category: "Suínos" },
