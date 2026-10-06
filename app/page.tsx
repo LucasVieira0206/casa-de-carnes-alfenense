@@ -232,7 +232,7 @@ export default function Home() {
  // --- BASE DE DADOS DE PRODUTOS ---
   const produtos: Produto[] = [
     // BOVINOS 
-    { id: "1", nome: "Picanha Premium", preco: 94.90, imagem: "/picanha.png", descricao: "Corte nobre com capa de gordura uniforme. O peso e o valor final da peça serão confirmados no WhatsApp.", unidade: "kg", category: "Bovinos", sobConsulta: true },
+    { id: "1", nome: "Picanha Premium", preco: 94.90, imagem: "/picanha.png", descricao: "Corte nobre com capa de gordura uniforme. O peso e o valor final da peça serão confirmados no WhatsApp.", unidade: "kg", category: "Bovinos", sobConsulta: false },
     { id: "2", nome: "Contra Filé", preco: 64.90, imagem: "/contrafile.png", descricao: "Corte clássico, macio e versátil, ideal para bifes e grelha.", unidade: "kg", category: "Bovinos" },
     { id: "10", nome: "Alcatra", preco: 64.90, imagem: "/alcatra.png", descricao: "Carne magra de primeira, excelente para assados e bifes.", unidade: "kg", category: "Bovinos" },
     { id: "37", nome: "Maminha", preco: 59.90, imagem: "/maminha.png", descricao: "Corte super suculento e macio, perfeito para assar no forno ou na brasa.", unidade: "kg", category: "Bovinos" },
