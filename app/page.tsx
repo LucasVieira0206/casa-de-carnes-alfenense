@@ -74,12 +74,12 @@ export default function Home() {
     { id: 'k11', nome: 'Frango a Passarinho', porcao: '500g', preco: 10.00, imagem: '/frango-passarinho.png' },
     { id: 'k12', nome: 'Pernil em Cubos', porcao: '500g', preco: 13.00, imagem: '/pernil.png' },
     { id: 'k13', nome: 'Peixe', porcao: '1 Bdj', preco: 25.00, imagem: '/file-peixe.png' },
-    { id: 'k14', nome: 'Tulipa', porcao: '500g', preco: 17.00, imagem: '/tulipa.png' },
+    { id: 'k14', nome: 'Tulipa', porcao: '500g', preco: 19.00, imagem: '/tulipa.png' },
     { id: 'k15', nome: 'Coxinha da Asa', porcao: '500g', preco: 14.00, imagem: '/coxinha-asa.jpeg' },
     { id: 'k16', nome: 'Coxa', porcao: '1kg', preco: 18.00, imagem: '/coxa-sobrecoxa.jpeg' },
     { id: 'k17', nome: 'Filé de Frango Empanado', porcao: '500g', preco: 15.00, imagem: '/file-empanado.png' },
     { id: 'k18', nome: 'Linguiça', porcao: '500g', preco: 15.00, imagem: '/linguica-toscana.png' },
-    { id: 'k19', nome: 'Salsicha', porcao: '500g', preco: 6.00, imagem: '/salsicha.png' },
+    { id: 'k19', nome: 'Salsicha', porcao: '500g', preco: 7.50, imagem: '/salsicha.png' },
   ];
 
   const totalItensSelecionadosKit = Object.values(selecaoKit).reduce((acc, curr) => acc + curr, 0);
@@ -234,6 +234,7 @@ export default function Home() {
     // BOVINOS 
     { id: "1", nome: "Picanha Premium", preco: 94.90, imagem: "/picanha.png", descricao: "Corte nobre com capa de gordura uniforme. O peso e o valor final da peça serão confirmados no WhatsApp.", unidade: "kg", category: "Bovinos", sobConsulta: false },
     { id: "2", nome: "Contra Filé", preco: 64.90, imagem: "/contrafile.png", descricao: "Corte clássico, macio e versátil, ideal para bifes e grelha.", unidade: "kg", category: "Bovinos" },
+    { id: "108", nome: "Contra Filé Estancia", preco: 84.0, imagem: "/contrafile.png", descricao: "Corte clássico Estância 92, macio e versátil, ideal para bifes e grelha.", unidade: "kg", category: "Bovinos" },
     { id: "10", nome: "Alcatra", preco: 64.90, imagem: "/alcatra.png", descricao: "Carne magra de primeira, excelente para assados e bifes.", unidade: "kg", category: "Bovinos" },
     { id: "37", nome: "Maminha", preco: 59.90, imagem: "/maminha.png", descricao: "Corte super suculento e macio, perfeito para assar no forno ou na brasa.", unidade: "kg", category: "Bovinos" },
     { id: "38", nome: "Coxão Mole", preco: 54.90, imagem: "/coxao-mole.png", descricao: "Carne macia do dia a dia, ideal para bifes, assados e carne moída.", unidade: "kg", category: "Bovinos" },
@@ -250,10 +251,10 @@ export default function Home() {
     { id: "13", nome: "Patinho", preco: 54.90, imagem: "/patinho.png", descricao: "Carne magra de primeira com pouca gordura. Ideal para bifes, picadinhos ou moída na hora.", unidade: "kg", category: "Bovinos" },
     { id: "106", nome: "Peixinho", preco: 48.90, imagem: "/peixinho.png", descricao: "Corte magro, macio e saboroso, com pouca gordura. Perfeito para bifes, picadinhos, assados ou carne moída.", unidade: "kg", category: "Bovinos" },
     { id: "107", nome: "Filé Mignon", preco: 94.90, imagem: "/mignon.png", descricao: "Corte nobre, extremamente macio e com pouca gordura. Ideal para medalhões, bifes, escalopes e receitas especiais.", unidade: "kg", category: "Bovinos" },
-
+    { id: "110", nome: "Rabada", preco: 44.90, imagem: "/rabada.png", descricao: "Carne saborosa e suculenta, com bastante colágeno e gordura. Ideal para cozidos, ensopados e preparos de panela.", unidade: "kg", category: "Bovinos" },
      
     // SUÍNOS
-    { id: "92", nome: "Bacon", preco: 32.90, imagem: "/bacon.png", descricao: "Bacon defumado em peça, com equilíbrio perfeito de carne e gordura.", unidade: "kg", category: "Suínos" },
+    { id: "92", nome: "Bacon", preco: 42.00, imagem: "/bacon.png", descricao: "Bacon defumado em peça, com equilíbrio perfeito de carne e gordura.", unidade: "kg", category: "Suínos" },
     { id: "93", nome: "Calabresa", preco: 32.90, imagem: "/calabresa.png", descricao: "Linguiça calabresa defumada de alta qualidade, ideal para porções.", unidade: "kg", category: "Suínos" },
     { id: "14", nome: "Costelinha de Porco", preco: 33.90, imagem: "/costelinha-porco.png", descricao: "Corte super saboroso, a queridinha para assar no forno ou churrasqueira.", unidade: "kg", category: "Suínos" },
     { id: "15", nome: "Lombo", preco: 24.90, imagem: "/lombo.png", descricao: "Carne suína nobre e magra, muito versátil para assar e fatiar.", unidade: "kg", category: "Suínos" },
@@ -270,14 +271,15 @@ export default function Home() {
     { id: "95", nome: "Linguiça Suína Recheada", preco: 45.00, imagem: "/linguica-suina-recheada.png", descricao: "Linguiça suína elevada ao próximo nível com nosso recheio especial.", unidade: "kg", category: "Linguiças" },
 
     // FRANGOS 
-    { id: "3", nome: "Tulipa de Frango", preco: 32.90, imagem: "/tulipa.png", descricao: "O meio da asa temperado, carne suculenta e que doura fácil na brasa.", unidade: "kg", category: "Frangos" },
+    { id: "3", nome: "Tulipa de Frango", preco: 38.00, imagem: "/tulipa.png", descricao: "O meio da asa temperado, carne suculenta e que doura fácil na brasa.", unidade: "kg", category: "Frangos" },
+     { id: "109", nome: "Tulipa Com Mostarda e Mel", preco: 42.00, imagem: "/tulipa.png", descricao: "Tulipa com o toque agridoce perfeito da mostarda e mel.", unidade: "kg", category: "Frangos" },
     { id: "21", nome: "Filé de Peito", preco: 29.90, imagem: "/file-peito.png", descricao: "Limpo, sem osso e sem pele. A escolha prática e saudável para o dia a dia.", unidade: "kg", category: "Frangos" },
     { id: "80", nome: "Asa de Frango", preco: 19.90, imagem: "/asa-frango.jpeg", descricao: "Corte tradicional que todos adoram, perfeito para petiscos e assados.", unidade: "kg", category: "Frangos" },
     { id: "81", nome: "Coraçãozinho de Frango", preco: 49.00, imagem: "/coracaozinho-frango.jpeg", descricao: "Limpos e frescos. A estrela dos aperitivos antes do prato principal.", unidade: "kg", category: "Frangos" },
     { id: "82", nome: "Coxa com Sobrecoxa", preco: 17.90, imagem: "/coxa-sobrecoxa.jpeg", descricao: "As partes mais suculentas do frango, garantem um assado macio e saboroso.", unidade: "kg", category: "Frangos" },
     { id: "97", nome: "Sobrecoxa", preco: 19.90, imagem: "/sobrecoxa.jpeg", descricao: "Corte suculento e versátil, excelente para assados ou ensopados.", unidade: "kg", category: "Frangos" },
     { id: "83", nome: "Coxinha da Asa", preco: 24.90, imagem: "/coxinha-asa.jpeg", descricao: "Os famosos 'drumets', pequenininhos, fáceis de fazer e super carnudos.", unidade: "kg", category: "Frangos" },
-    { id: "84", nome: "Fígado de Frango", preco: 13.00, imagem: "/figado-frango.jpeg", descricao: "Fresco e fonte de ferro, excelente para refogados com cebola e patês.", unidade: "kg", category: "Frangos" },
+    { id: "84", nome: "Fígado de Frango", preco: 14.00, imagem: "/figado-frango.jpeg", descricao: "Fresco e fonte de ferro, excelente para refogados com cebola e patês.", unidade: "kg", category: "Frangos" },
     { id: "85", nome: "Frango a Passarinho", preco: 20.00, imagem: "/frango-passarinho.png", descricao: "Cortes pequenos e uniformes, perfeitos para empanar, fritar ou fazer ao molho.", unidade: "kg", category: "Frangos" },
     { id: "88", nome: "Medalhão de Frango", preco: 47.90, imagem: "/medalhao-frango.png", descricao: "Peito de frango enrolado caprichosamente na tira de bacon. Um espetáculo.", unidade: "kg", category: "Frangos" },
     { id: "89", nome: "Moela", preco: 20.00, imagem: "/moela.jpeg", descricao: "Muito bem limpas, a escolha certa para preparar aquele ensopado de boteco.", unidade: "kg", category: "Frangos" },
