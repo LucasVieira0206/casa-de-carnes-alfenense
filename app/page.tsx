@@ -329,8 +329,8 @@ export default function Home() {
     { id: "31", nome: "Kit Fitness #1", preco: 125.00, imagem: "/kit-fitness-1.PNG", descricao: "1 Bdj Almôndegas / 500g Bife de Patinho / 500g Filé de Frango / 500g Patinho Moído /  1 Bdj Hambúrguer", unidade: "un", category: "Kits" },
     { id: "32", nome: "Kit Fitness #2", preco: 125.00, imagem: "/kit-fitness-2.PNG", descricao: "1 Bdj Almôndegas / 500g Bife de Patinho / 500g Filé de Frango / 500g Patinho Moído / 1 Bdj Filé de Peixe ", unidade: "un", category: "Kits" },
     { id: "33", nome: "Kit Hambúrguer", preco: 79.00, imagem: "/kit-hamburguer.jpeg", descricao: "6 Unidades Pães Brioche / 12 Fat Queijo Cheddar / 12 Fatias Bacon / 6 Unidades Hambúrguer Artesanal 120g", unidade: "un", category: "Kits" },
-    { id: "34", nome: "Kit Churrasco - 10 Pessoas", preco: 174.90, imagem: "/kit-churrasco-10.PNG", descricao: "600g Contra Filé / 600g Coxão Mole / 500g Tulipa / 1 Bdj Pão de Alho / 600g Linguiça / 600g Pernil", unidade: "un", category: "Kits" },
-    { id: "35", nome: "Kit Churrasco 2 - 10 Pessoas", preco: 164.90, imagem: "/kit-churrasco-10-2.PNG", descricao: "800g Contra Filé / 800g Coxão Mole / 500g Tulipa / 800g Panceta / 500g Linguiça / 800g Pernil", unidade: "un", category: "Kits" },
+    { id: "34", nome: "Kit Churrasco - 10 Pessoas + Carvão", preco: 174.90, imagem: "/kit-churrasco-10.PNG", descricao: "600g Contra Filé / 600g Coxão Mole / 500g Tulipa / 1 Bdj Pão de Alho / 600g Linguiça / 600g Pernil / 1 Pacote de Carvão", unidade: "un", category: "Kits" },
+    { id: "35", nome: "Kit Churrasco - 10 Pessoas", preco: 164.90, imagem: "/kit-churrasco-10-2.PNG", descricao: "800g Contra Filé / 800g Coxão Mole / 500g Tulipa / 800g Panceta / 500g Linguiça / 800g Pernil", unidade: "un", category: "Kits" },
     //{ id: "36", nome: "Kit Churrasco - 12 Pessoas", preco: 219.90, imagem: "/kit-churrasco-12.png", descricao: "800g Panceta / 800g Contra Filé Paraguaio / 800g Alcatra / 800g Linguiça Recheada / 1 Pct Tulipa C/ Mostarda e Mel", unidade: "un", category: "Kits" },
   ];
 
