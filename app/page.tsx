@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 // Estruturas de dados
 type Produto = { 
@@ -302,7 +303,7 @@ export default function Home() {
     // LINGUIÇAS
     { id: "124", nome: "Linguiça Suína Recheada Romeu e Julieta", preco: 46.00, imagem: "/linguica-romeu-julieta.png", descricao: "Combinação surpreendente de linguiça suína artesanal recheada com queijo e goiabada.", unidade: "kg", category: "Linguiças" },
     { id: "87", nome: "Linguiça de Frango Recheada", preco: 42.00, imagem: "/linguica-frango-recheada.png", descricao: "Linguiça de frango artesanal com aquele recheio irresistível e cremoso.", unidade: "kg", category: "Linguiças" },
-    { id: "95", nome: "Linguiça Suína Recheada", preco: 42.00, imagem: "/linguica-suina-recheada.png", descricao: "Linguiça suína elevada ao próximo nível com nosso recheio especial.", unidade: "kg", category: "Linguiças" },
+    { id: "95", nome: "Linguiça Suína Recheada", preco: 42.00, imagem: "/linguica-suina-recheada.png", descricao: "Linguiça suína elevated ao próximo nível com nosso recheio especial.", unidade: "kg", category: "Linguiças" },
     { id: "125", nome: "Linguiça Bovina Recheada", preco: 42.00, imagem: "/linguica-bovina-recheada.png", descricao: "Toda a suculência da carne bovina em uma linguiça artesanal com recheio especial.", unidade: "kg", category: "Linguiças" },
     { id: "86", nome: "Linguiça de Frango (Comum)", preco: 30.00, imagem: "/linguica-frango-comum.png", descricao: "Mais leve, suave e saborosa. Feita com cortes de frango selecionados.", unidade: "kg", category: "Linguiças" },
     { id: "4", nome: "Linguiça Toscana", preco: 28.90, imagem: "/linguica-toscana.png", descricao: "A tradicional do churrasco, super suculenta e com tempero no ponto.", unidade: "kg", category: "Linguiças" },
@@ -545,9 +546,12 @@ export default function Home() {
 
       {/* BANNER PRINCIPAL */}
       <section className="w-full flex justify-center p-4 md:p-6 pb-2">
-        <img 
+        <Image 
           src="/banner.png" 
           alt="Banner Casa de Carnes Alfenense" 
+          width={896}
+          height={300}
+          priority
           className="w-full max-w-4xl h-auto object-cover rounded-2xl shadow-md border border-zinc-200" 
           onError={(e) => { 
             const target = e.currentTarget;
@@ -562,11 +566,11 @@ export default function Home() {
       {/* BOTÕES RÁPIDOS */}
       <section className="px-4 py-2 flex justify-center gap-3 max-w-4xl mx-auto">
         <a href="https://www.ifood.com.br/delivery/alfenas-mg/casa-de-carnes-e-frangos-alfenense-aparecida/ca0df60d-59b9-4309-9616-02ab67e4aa99?utm_medium=share" target="_blank" rel="noopener noreferrer" className="flex-1 bg-[#ea1d2c] hover:bg-[#c91825] text-white flex flex-col md:flex-row items-center justify-center gap-2 py-3 rounded-xl font-bold shadow-md transition-transform active:scale-95">
-          <img src="/ifood-logo.jpg" alt="iFood" className="w-6 h-6 object-contain rounded-md" onError={(e) => (e.currentTarget.style.display = 'none')} />
+          <Image src="/ifood-logo.jpg" width={24} height={24} alt="iFood" className="w-6 h-6 object-contain rounded-md" onError={(e) => (e.currentTarget.style.display = 'none')} />
           <span className="text-sm md:text-base">Pedir no iFood</span>
         </a>
         <a href="https://wa.me/5535999323530?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" rel="noopener noreferrer" className="flex-1 bg-[#25D366] hover:bg-[#1ebd59] text-white flex flex-col md:flex-row items-center justify-center gap-2 py-3 rounded-xl font-bold shadow-md transition-transform active:scale-95">
-          <img src="/whatsapp-logo.jpg" alt="WhatsApp" className="w-6 h-6 object-contain rounded-md" onError={(e) => (e.currentTarget.style.display = 'none')} />
+          <Image src="/whatsapp-logo.jpg" width={24} height={24} alt="WhatsApp" className="w-6 h-6 object-contain rounded-md" onError={(e) => (e.currentTarget.style.display = 'none')} />
           <span className="text-sm md:text-base">Pedir no WhatsApp</span>
         </a>
       </section>
@@ -601,10 +605,12 @@ export default function Home() {
           {produtosFiltrados.map((produto) => (
             <div key={produto.id} className="bg-white rounded-2xl shadow-sm border border-zinc-200 overflow-hidden flex flex-row h-[130px] transition-transform hover:-translate-y-1 hover:shadow-md cursor-pointer" onClick={() => abrirModalProduto(produto)}>
               <div className="w-1/3 bg-zinc-100 flex-shrink-0 relative overflow-hidden flex items-center justify-center border-r border-zinc-100">
-                <img 
+                <Image 
                   src={produto.imagem} 
                   alt={produto.nome} 
-                  className="w-full h-full object-cover absolute inset-0" 
+                  fill
+                  sizes="(max-width: 768px) 33vw, 20vw"
+                  className="object-cover absolute inset-0" 
                   onError={(e) => { 
                     const target = e.currentTarget;
                     target.style.display = 'none'; 
@@ -712,7 +718,7 @@ export default function Home() {
           <p className="text-zinc-500 text-sm mb-6 relative z-10">Acompanhe nossas ofertas, bastidores e veja nossas carnes de primeira bem de perto!</p>
           <div className="flex-1 flex flex-col justify-center items-center relative z-10 mb-6 mt-2">
              <div className="w-24 h-24 bg-zinc-100 rounded-full border-4 border-white shadow-[0_0_0_2px_#e1306c] p-1 mb-3">
-               <img src="/logo.png" alt="Instagram" className="w-full h-full rounded-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
+               <Image src="/logo.png" width={96} height={96} alt="Instagram" className="w-full h-full rounded-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
              </div>
              <span className="font-black text-lg text-zinc-900">@casadecarnes_frangos.alfenense</span>
              <span className="text-xs text-zinc-500 font-medium">Carnes Premium • Kits • Assados</span>
@@ -770,11 +776,12 @@ export default function Home() {
               {/* ETAPA 1: ESCOLHER CORTE */}
               {etapaModal === 1 && (
                 <div className="flex flex-col md:flex-row h-full">
-                  <div className="w-full md:w-1/2 bg-gradient-to-br from-black to-yellow-600 h-48 md:h-full flex items-center justify-center p-6 shrink-0">
-                    <img 
+                  <div className="w-full md:w-1/2 bg-gradient-to-br from-black to-yellow-600 h-48 md:h-full flex items-center justify-center p-6 shrink-0 relative">
+                    <Image 
                       src={produtoModal.imagem} 
                       alt={produtoModal.nome} 
-                      className="w-full h-auto max-h-48 object-contain drop-shadow-2xl" 
+                      fill
+                      className="object-contain drop-shadow-2xl" 
                       onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} 
                     />
                   </div>
@@ -938,10 +945,11 @@ export default function Home() {
                     
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-zinc-100 rounded-lg flex-shrink-0 relative overflow-hidden border border-zinc-200">
-                        <img 
+                        <Image 
                           src={prod.imagem} 
                           alt={prod.nome} 
-                          className="w-full h-full object-cover" 
+                          fill
+                          className="object-cover absolute inset-0" 
                           onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} 
                         />
                       </div>
@@ -1059,10 +1067,11 @@ export default function Home() {
                     <div key={item.idCarrinho} className="flex justify-between items-start border-b border-zinc-100 pb-5">
                       <div className="flex items-start gap-4 w-3/5">
                         <div className="w-12 h-12 bg-zinc-100 rounded-lg flex-shrink-0 relative overflow-hidden border border-zinc-200 mt-1">
-                          <img 
+                          <Image 
                             src={item.imagem} 
                             alt={item.nome} 
-                            className="w-full h-full object-cover" 
+                            fill
+                            className="object-cover absolute inset-0" 
                             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} 
                           />
                         </div>
